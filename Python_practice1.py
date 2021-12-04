@@ -100,3 +100,39 @@ message_to_candidate = (
     f"You received {candidate_votes / total_votes * 100}% of the total votes.")
 
 print(message_to_candidate)
+
+#Mode txtfile \n ("Arapahoe\nDenver\nJefferson")
+import csv
+import os
+#Assign a variable for the variable for the file to load and the path
+file_to_load = os.path.join("Resources","election_results.csv")
+file_to_save = os.path.join("analysis","election_analysis.txt")
+with open(file_to_load) as election_data:
+
+    #Print the file object
+    print(election_data) 
+
+with open(file_to_save, "w") as txt_file:
+    # Write three counties to the file.
+     txt_file.write("Arapahoe\nDenver\nJefferson")
+     
+txt_file.close() 
+
+#Mode txtfile \n ("Arapahoe\nDenver\nJefferson") with Header
+import csv
+import os
+#Assign a variable for the variable for the file to load and the path
+file_to_load = os.path.join("Resources","election_results.csv")
+file_to_save = os.path.join("analysis","election_analysis.txt")
+with open(file_to_load) as election_data:
+
+    #Print the file object
+    print(election_data) 
+
+with open(file_to_save, "w") as txt_file:
+    # Write three counties to the file.
+     txt_file.write("Counties in the Election\n")
+     txt_file.write(("-" * 10) + "\n")
+     txt_file.write("Arapahoe\nDenver\nJefferson")
+     
+txt_file.close() 
